@@ -1,5 +1,6 @@
 import express from "express";
 import cors from "cors";
+import cookieParser from "cookie-parser";
 
 const app = express();
 
@@ -9,6 +10,8 @@ app.use(
     credentials: true,
   })
 );
+
+app.use(cookieParser())
 
 // common middleware
 app.use(express.json({ limit: "16kb" }));
